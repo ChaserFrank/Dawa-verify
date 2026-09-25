@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f8f6f1">
+  <title>Dawa Verify | Medicine information you can trust</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <div class="medicine-background" aria-hidden="true"><span class="background-pill pill-one"></span><span class="background-pill pill-two"></span><span class="background-pill pill-three"></span><span class="background-pill pill-four"></span></div>
+    <header class="topbar">
+      <a class="brand" href="#landing" aria-label="Dawa Verify home" data-view="result">
+        <span class="brand-mark" aria-hidden="true">+</span>
+        <span class="brand-copy"><span>Dawa <strong>Verify</strong></span><small>Clear medicine information</small></span>
+      </a>
+      <nav class="top-nav" aria-label="Site navigation"><button type="button" data-view="result">Home</button><button type="button" data-view="how">How it works</button><button type="button" data-view="inventory">Dashboard</button></nav>
+      <div class="topbar-actions">
+        <div class="language-menu-wrap">
+          <button class="language-button" id="language-button" type="button" aria-label="Change language" aria-expanded="false">EN <span aria-hidden="true">⌄</span></button>
+          <div class="language-menu" id="language-menu" role="menu">
+            <button type="button" role="menuitem" data-language="en"><span>English</span><small>EN</small></button>
+            <button type="button" role="menuitem" data-language="sw"><span>Kiswahili</span><small>SW</small></button>
+            <button type="button" role="menuitem" data-language="fr"><span>Francais</span><small>FR</small></button>
+          </div>
+        </div>
+        <button class="profile-button" type="button" aria-label="Open profile">AM</button>
+      </div>
+    </header>
+
+    <div class="announcement-bar"><span aria-hidden="true">✦</span> Photograph the package. Understand the medicine. <button type="button" data-view="how">Learn how it works <span aria-hidden="true">→</span></button></div>
+
+    <main>
+      <section class="view" id="verify-view" aria-labelledby="verify-title">
+        <div class="intro-grid">
+          <div class="intro-copy">
+            <p class="eyebrow"><span class="eyebrow-dot"></span> Medicine information, made clearer</p>
+            <h1 id="verify-title">Know what you’re holding.</h1>
+            <p class="intro-text">Take a photo of the medicine package. We’ll read the label and show you what we can verify, in plain language.</p>
+          </div>
+          <div class="trust-note">
+            <span class="trust-icon" aria-hidden="true">i</span>
+            <p>This tool does not prove a medicine is genuine or counterfeit. When something is unclear, we’ll say so.</p>
+          </div>
+        </div>
+
+        <div class="capture-layout">
+          <div class="capture-card">
+            <div class="card-heading">
+              <div>
+                <span class="step-label">STEP 01</span>
+                <h2>Add package photos</h2>
+              </div>
+              <span class="photo-count" id="photo-count">0 / 3</span>
+            </div>
+            <p class="card-subtitle">Front, back, and the batch or expiry area give the clearest result.</p>
+
+            <label class="upload-zone" for="photo-input" id="upload-zone">
+              <input id="photo-input" type="file" accept="image/*" multiple>
+              <span class="upload-icon" aria-hidden="true">↑</span>
+              <strong id="upload-title">Drop photos here</strong>
+              <span id="upload-hint">or tap to choose from your device</span>
+              <span class="upload-types">JPG, PNG up to 10 MB each</span>
+            </label>
+
+            <div class="photo-strip" id="photo-strip" aria-live="polite"></div>
+            <div class="capture-actions">
+              <button class="button button-primary" id="verify-button" type="button" disabled><span aria-hidden="true">✦</span> Verify medicine</button>
+              <button class="button button-quiet" id="demo-button" type="button">View sample result</button>
+            </div>
+          </div>
+
+          <aside class="how-it-works" aria-label="How Dawa Verify works">
+            <span class="aside-kicker">WHAT HAPPENS NEXT</span>
+            <ol>
+              <li><span>01</span><div><strong>We read</strong><p>Names, strength, batch, and expiry as printed.</p></div></li>
+              <li><span>02</span><div><strong>Rules check</strong><p>Dates and missing information are checked separately.</p></div></li>
+              <li><span>03</span><div><strong>You decide</strong><p>Review the evidence before saving or acting.</p></div></li>
+            </ol>
+          </aside>
+        </div>
+
+        <div class="recent-section">
+          <div class="section-heading"><div><span class="step-label">YOUR ACTIVITY</span><h2>Recent checks</h2></div><button class="text-button" type="button">See all <span aria-hidden="true">→</span></button></div>
+          <div class="recent-list">
+            <button class="recent-item" type="button" data-demo="verified"><span class="medicine-thumb thumb-blue">A</span><span class="recent-details"><strong>Amoxicillin 500 mg</strong><small>Checked today · 2 photos</small></span><span class="status-pill status-good">Information verified</span><span class="recent-arrow" aria-hidden="true">→</span></button>
+            <button class="recent-item" type="button" data-demo="warning"><span class="medicine-thumb thumb-amber">P</span><span class="recent-details"><strong>Paracetamol 500 mg</strong><small>Checked yesterday · 3 photos</small></span><span class="status-pill status-warning">Expiry warning</span><span class="recent-arrow" aria-hidden="true">→</span></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="view active" id="result-view" aria-labelledby="result-title">
+        <div class="result-topline"><button class="back-button" type="button" data-back="verify">← <span>New check</span></button><span class="result-date">CHECKED JUST NOW</span></div>
+        <div class="result-hero"><div><p class="eyebrow"><span class="eyebrow-dot green"></span> Your medicine assistant</p><h1 id="result-title">Hello, Amina.</h1><p>Here is what we found on your package.</p></div><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=180&q=80" alt="Amina smiling" class="profile-photo"></div>
+        <div class="certification-card"><span class="certification-icon">✓</span><div><span class="status-card-label">REGULATORY CERTIFIED</span><strong>Verified information</strong><small>National Pharmacy Board Registry match</small></div><span class="confidence">92% match</span></div>
+        <div class="medicine-summary"><div class="medicine-pack">A</div><div class="medicine-summary-copy"><span class="source-tag">ACTIVE CONFIRMATION</span><h2>Amoxicillin <span>500 mg</span></h2><p>Antibiotic · Dawa ya Bakteria</p><strong>1 capsule · 3× kila siku</strong></div><span class="summary-check">✓</span></div>
+        <div class="language-row"><span>Chagua lugha <small>(Audio Language)</small></span><div><button class="language-chip active" type="button" data-language="sw">Kiswahili</button><button class="language-chip" type="button" data-language="en">English</button></div></div>
+        <div class="voice-card"><div class="voice-card-top"><div><span class="source-tag">INAYOSOMWA SASA (SPOKEN NOW)</span><strong>“Kunywa kidonge kimoja asubuhi na chakula na glasi ya maji.”</strong></div><span class="voice-badge">◉ Sauti</span></div><p class="translation">Take 1 capsule in the morning with a full breakfast.</p><div class="waveform"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="audio-controls"><span>01:15</span><button class="play-button" type="button" aria-label="Pause audio">Ⅱ</button><span>02:40</span></div></div>
+        <div class="care-card"><div class="care-card-heading"><span class="care-icon">!</span><div><strong>Essential care advice</strong><small>Take food with water. Complete all 5 prescribed days even if fever or pain subsides.</small></div></div></div>
+        <div class="security-card"><div class="data-card-heading"><h2>Security signals</h2><span class="source-tag">3 of 3 passed</span></div><ul class="check-list"><li><span class="check-icon">✓</span><div><strong>Authentic security seal</strong><p>Intact micro-fiber serial pattern matches National Central Database.</p></div><em>Valid</em></li><li><span class="check-icon">✓</span><div><strong>Regulatory DataMatrix</strong><p>Live verification against legitimate GSK registered batch distribution.</p></div><em>Valid</em></li></ul></div>
+        <div class="result-actions"><button class="button button-primary" id="save-button" type="button">Save to inventory <span aria-hidden="true">→</span></button><button class="button button-secondary" type="button" data-back="verify">Done</button></div>
+        <p class="safety-footer"><span aria-hidden="true">!</span> This information does not prove authenticity or replace advice from a pharmacist.</p>
+      </section>
+
+      <section class="view" id="inventory-view" aria-labelledby="inventory-title">
+        <div class="inventory-heading"><div><p class="eyebrow"><span class="eyebrow-dot orange"></span> Pharmacy workspace</p><h1 id="inventory-title">Your inventory.</h1><p>Keep batches visible before they become a problem.</p></div><button class="button button-primary" type="button" data-back="verify">+ Add stock</button></div>
+        <div class="inventory-summary"><div><span>STOCK ITEMS</span><strong>24</strong></div><div class="summary-alert"><span>EXPIRING IN 60 DAYS</span><strong>3</strong></div><div><span>LAST UPDATED</span><strong>Today</strong></div></div>
+        <div class="inventory-toolbar"><label class="search-field"><span aria-hidden="true">⌕</span><input type="search" placeholder="Search medicines or batch numbers"></label><button class="filter-button" type="button">All stock <span aria-hidden="true">⌄</span></button></div>
+        <div class="inventory-table-wrap"><table><thead><tr><th>Medicine</th><th>Batch</th><th>Expiry</th><th>Quantity</th><th>Status</th><th></th></tr></thead><tbody><tr><td><strong>Amoxicillin 500 mg</strong><small>Medisource Ltd.</small></td><td>AMX-24081</td><td>Aug 2027</td><td>120</td><td><span class="status-pill status-good">Good</span></td><td><button class="row-menu" type="button" aria-label="More actions">•••</button></td></tr><tr><td><strong>Paracetamol 500 mg</strong><small>Global Pharma</small></td><td>PCM-23114</td><td>Nov 2026</td><td>48</td><td><span class="status-pill status-warning">Review soon</span></td><td><button class="row-menu" type="button" aria-label="More actions">•••</button></td></tr><tr><td><strong>Artemether 20/120 mg</strong><small>Lakeview Labs</small></td><td>ART-24002</td><td>Oct 2026</td><td>16</td><td><span class="status-pill status-danger">Within 60 days</span></td><td><button class="row-menu" type="button" aria-label="More actions">•••</button></td></tr></tbody></table></div>
+      </section>
+
+      <section class="view" id="history-view" aria-labelledby="history-title">
+        <div class="page-heading"><div><p class="eyebrow"><span class="eyebrow-dot"></span> Verification activity</p><h1 id="history-title">Your history.</h1><p>Review previous medicine checks and the evidence captured with each one.</p></div><button class="button button-secondary" type="button" data-back="result">Back to verify</button></div>
+        <div class="history-summary"><div><span>TOTAL CHECKS</span><strong>18</strong></div><div><span>THIS MONTH</span><strong>6</strong></div><div><span>WARNINGS</span><strong>2</strong></div></div>
+        <div class="history-list"><button class="history-item" type="button" data-demo="verified"><span class="medicine-thumb thumb-blue">A</span><span class="history-details"><strong>Amoxicillin 500 mg</strong><small>Today · 2 photos · AMX-24081</small></span><span class="status-pill status-good">Information verified</span><span class="recent-arrow" aria-hidden="true">→</span></button><button class="history-item" type="button" data-demo="warning"><span class="medicine-thumb thumb-amber">P</span><span class="history-details"><strong>Paracetamol 500 mg</strong><small>Yesterday · 3 photos · PCM-23114</small></span><span class="status-pill status-warning">Expiry warning</span><span class="recent-arrow" aria-hidden="true">→</span></button><button class="history-item" type="button" data-demo="unclear"><span class="medicine-thumb thumb-green">?</span><span class="history-details"><strong>Unidentified package</strong><small>18 Sep 2026 · 1 photo</small></span><span class="status-pill status-danger">Could not verify</span><span class="recent-arrow" aria-hidden="true">→</span></button></div>
+      </section>
+
+      <section class="view" id="help-view" aria-labelledby="help-title">
+        <div class="page-heading"><div><p class="eyebrow"><span class="eyebrow-dot orange"></span> Support and safety</p><h1 id="help-title">How can we help?</h1><p>Simple guidance for getting a clearer, safer result.</p></div><button class="button button-primary" type="button" data-back="verify">Start a check</button></div>
+        <div class="help-grid"><article class="help-card"><span class="help-number">01</span><h2>Take clear photos</h2><p>Photograph the front, back, and the batch or expiry area. Keep the label flat and well lit.</p></article><article class="help-card"><span class="help-number">02</span><h2>Review the evidence</h2><p>We show what was read from the package separately from the rules that were applied.</p></article><article class="help-card"><span class="help-number">03</span><h2>Ask a pharmacist</h2><p>A result cannot prove a medicine is genuine or counterfeit. Ask a qualified professional when anything is unclear.</p></article></div>
+        <div class="help-notice"><span class="trust-icon">i</span><div><strong>Important safety boundary</strong><p>Dawa Verify does not prescribe, change dosage, or replace advice from a pharmacist or official medicine authority.</p></div></div>
+        <button class="support-link" type="button">Contact support <span aria-hidden="true">→</span></button>
+      </section>
+
+      <section class="view" id="how-view" aria-labelledby="how-title">
+        <div class="page-heading"><div><p class="eyebrow"><span class="eyebrow-dot green"></span> A clearer way to check</p><h1 id="how-title">How Dawa Verify works.</h1><p>We turn a medicine photo into structured information and transparent safety signals.</p></div><button class="button button-primary" type="button" data-back="verify">Try a medicine check</button></div>
+        <div class="how-steps"><article class="how-step"><span>01</span><div><h2>See</h2><p>Take photos of the front, back, and the batch or expiry area. The system reads only what is visible on the package.</p></div></article><article class="how-step"><span>02</span><div><h2>Understand</h2><p>Qwen Vision extracts the medicine name, strength, manufacturer, batch, expiry, and printed instructions.</p></div></article><article class="how-step"><span>03</span><div><h2>Verify</h2><p>Deterministic rules check dates, required fields, and reference catalogue matches separately from the AI reading.</p></div></article><article class="how-step"><span>04</span><div><h2>Act</h2><p>Review the evidence, listen in a supported language, or save confirmed stock for pharmacy monitoring.</p></div></article></div>
+        <div class="how-boundary"><strong>What it does not do</strong><p>A photo cannot prove that a medicine is genuine or counterfeit. When something is uncertain, Dawa Verify says so and points you to a pharmacist or official source.</p></div>
+      </section>
+
+      <section class="view" id="login-view" aria-labelledby="login-title">
+        <div class="login-layout"><div class="login-art"><span class="brand-mark" aria-hidden="true">+</span><h1>Medicine information you can understand.</h1><p>Check the label, see the evidence, and keep your pharmacy stock visible.</p></div><form class="login-card" id="login-form"><p class="eyebrow"><span class="eyebrow-dot"></span> Welcome back</p><h1 id="login-title">Sign in to Dawa Verify.</h1><label class="settings-field"><span>Email address</span><input id="login-email" type="email" placeholder="you@example.com" required></label><label class="settings-field"><span>Password</span><input id="login-password" type="password" placeholder="Enter your password" required></label><label class="remember-row"><input type="checkbox"> <span>Remember me</span><button type="button">Forgot password?</button></label><button class="button button-primary" type="submit">Sign in <span aria-hidden="true">→</span></button><p class="login-switch">New to Dawa Verify? <button type="button">Create an account</button></p></form></div>
+      </section>
+    </main>
+
+    <footer class="site-footer"><div><strong>Dawa Verify</strong><p>Clear medicine information for safer everyday decisions.</p></div><div class="footer-contact"><a href="mailto:hello@dawaverify.org">hello@dawaverify.org</a><a href="tel:+254700123456">+254 700 123 456</a></div><span>© 2026 Dawa Verify. All rights reserved.</span></footer>
+
+    <div class="settings-backdrop" id="settings-backdrop" hidden>
+      <section class="settings-panel" role="dialog" aria-modal="true" aria-labelledby="settings-title">
+        <div class="settings-header"><div><span class="step-label">ACCOUNT</span><h2 id="settings-title">Account settings</h2></div><button class="close-button" id="close-settings" type="button" aria-label="Close settings">×</button></div>
+        <div class="account-summary"><span class="account-avatar">AM</span><div><strong id="settings-name-preview">Amina Mwangi</strong><small>Pharmacy assistant</small></div><label class="edit-link photo-upload-button" for="profile-photo-input">Edit photo<input id="profile-photo-input" type="file" accept="image/*"></label></div>
+        <label class="settings-field"><span>Display name</span><input id="display-name" type="text" value="Amina Mwangi"></label>
+        <label class="settings-field"><span>Role</span><select id="account-role"><option>Pharmacy assistant</option><option>Pharmacist</option><option>Consumer</option></select></label>
+        <label class="settings-field"><span>Preferred language</span><select id="settings-language"><option value="en">English</option><option value="sw">Kiswahili</option><option value="fr">Francais</option></select></label>
+        <label class="settings-toggle"><span><strong>Expiry reminders</strong><small>Get a reminder before stock expires.</small></span><input id="expiry-reminders" type="checkbox" checked><i aria-hidden="true"></i></label>
+        <button class="button button-primary settings-save" id="save-settings" type="button">Save changes</button>
+        <button class="logout-button" id="logout-button" type="button">Log out</button>
+      </section>
+    </div>
+
+    <nav class="bottom-nav" aria-label="Main navigation"><button class="nav-item active" data-view="result" type="button"><span aria-hidden="true">⊕</span><strong>Verify</strong></button><button class="nav-item" data-view="inventory" type="button"><span aria-hidden="true">▤</span><strong>Inventory</strong></button><button class="nav-item" data-view="history" type="button"><span aria-hidden="true">◷</span><strong>History</strong></button><button class="nav-item" data-view="help" type="button"><span aria-hidden="true">?</span><strong>Help</strong></button></nav>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
